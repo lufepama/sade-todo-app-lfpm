@@ -12,7 +12,7 @@ import { useItems } from '../../hooks/useItems';
 const MainCard = () => {
 
   const { handleOpen } = useModal()
-  const { onDeleteItem, itemList } = useItems()
+  const { onDeleteItems, itemList } = useItems()
 
 
   return (
@@ -40,7 +40,7 @@ const MainCard = () => {
         <div className='mcard-btns-container'>
           <div className='mcard-first-btns'>
             <CustomButton isIcon={true} iconRef={faRotateLeft} />
-            <CustomButton isFilled={false} title={'Delete'} handleClick={() => onDeleteItem()} />
+            <CustomButton isFilled={false} title={'Delete'} handleClick={() => onDeleteItems()} />
           </div>
           <CustomButton isFilled={true} title={'Add'} handleClick={() => handleOpen()} />
         </div>

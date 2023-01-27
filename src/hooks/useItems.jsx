@@ -34,15 +34,23 @@ export const useItems = () => {
     }
 
     //Delete items taking into account temporalItemList data
-    const onDeleteItem = () => {
+    const onDeleteItems = () => {
         const filteredList = itemList.filter((item) => !temporalItemList.includes(item.id))
+        setItemList(filteredList)
+    }
+
+    //Delete single item
+    const deleteSingleItem = (delItem) => {
+        const filteredList = itemList.filter((item) => item.id != delItem.id)
         setItemList(filteredList)
     }
 
     return {
         itemList,
+        temporalItemList,
         handleItemClick,
         onAddItem,
-        onDeleteItem
+        onDeleteItems,
+        deleteSingleItem
     }
 }
