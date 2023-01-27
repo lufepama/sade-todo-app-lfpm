@@ -12,8 +12,10 @@ import { useItems } from '../../hooks/useItems';
 const MainCard = () => {
 
   const { handleOpen } = useModal()
-  const { onDeleteItems, itemList } = useItems()
+  const { onDeleteItems, onUndo, itemList } = useItems()
 
+
+  console.log(itemList)
 
   return (
     <div className='mcard-main-container'>
@@ -21,7 +23,7 @@ const MainCard = () => {
         <CreationModal />
         <div className='mcard-header'>
           <h1 className='mcard-title-header'>
-            This is technical proof
+            This is a technical proof
           </h1>
           <p className='mcard-subtitle-header'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
@@ -39,7 +41,7 @@ const MainCard = () => {
         </div>
         <div className='mcard-btns-container'>
           <div className='mcard-first-btns'>
-            <CustomButton isIcon={true} iconRef={faRotateLeft} />
+            <CustomButton isIcon={true} iconRef={faRotateLeft} handleClick={() => onUndo()} />
             <CustomButton isFilled={false} title={'Delete'} handleClick={() => onDeleteItems()} />
           </div>
           <CustomButton isFilled={true} title={'Add'} handleClick={() => handleOpen()} />

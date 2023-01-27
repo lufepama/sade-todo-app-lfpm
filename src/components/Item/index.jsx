@@ -5,7 +5,7 @@ import { useSingleAndDoubleClick } from '../../hooks/useSingleAndDoubleClick'
 
 export const Item = ({ item }) => {
 
-    const { handleItemClick, temporalItemList, onDeleteItems, deleteSingleItem } = useItems()
+    const { handleItemClick, deleteSingleItem, itemList } = useItems()
     const [isSelected, setIsSelected] = useState(false)
 
     const handleSingleClick = () => {
@@ -16,6 +16,7 @@ export const Item = ({ item }) => {
     const handleDoubleClick = () => {
         deleteSingleItem(item)
     }
+
 
     return (
         <div onClick={useSingleAndDoubleClick(handleSingleClick, handleDoubleClick)} className='item-main-container'>

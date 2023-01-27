@@ -31,11 +31,13 @@ export const ItemsProvider = ({ children }) => {
 
     const [itemList, setItemList] = useState(initialData)
     const [temporalItemList, setTemporalItemList] = useState([])
+    const [trackEvents, setTrackEvents] = useState({})
 
     return (
         <Context.Provider value={{
             itemList, setItemList,
-            temporalItemList, setTemporalItemList
+            temporalItemList, setTemporalItemList,
+            trackEvents, setTrackEvents
         }}>
             {children}
         </Context.Provider>
