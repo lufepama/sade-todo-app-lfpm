@@ -4,14 +4,17 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { ItemsProvider } from './context/ItemsContext';
+import { ModalProvider } from './context/ModalContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ItemsProvider>
-      <App />
-    </ItemsProvider>
-  </React.StrictMode>
+      < ModalProvider>
+        <App />
+      </ModalProvider>
+    </ItemsProvider >
+  </React.StrictMode >
 );
 
 // If you want to start measuring performance in your app, pass a function

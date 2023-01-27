@@ -3,7 +3,6 @@ import './App.css';
 import MainCard from './components/MainCard/index'
 
 
-
 function App() {
 
   return (

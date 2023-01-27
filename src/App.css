@@ -38,9 +38,92 @@
   color: #4d4d4d;
 }
 
-.it-list-main-container {
+.mcard-items-list {
   background-color: #f7f7f7;
   height: 150px;
   margin-top: 20px;
   padding: 12px;
+  border: 1px solid rgb(211, 210, 210);
+  overflow-y: auto;
+}
+
+.item-text {
+  background-color: #324bff;
+  color: rgb(231, 230, 230);
+  padding: 2px;
+}
+
+.btn-filled {
+  background-color: #324bff;
+  border-width: 0px;
+  border-radius: 20px;
+  padding-right: 13px;
+  padding-left: 13px;
+  padding-top: 10px;
+  width: 110px;
+  padding-bottom: 10px;
+}
+
+.btn-unfilled {
+  border: 1px solid #324bff;
+  background-color: white;
+  border-radius: 20px;
+  padding-right: 20px;
+  padding-left: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.btn-text {
+  font-size: 16px;
+  color: #324bff
+}
+
+.btn-icon {
+  color: #324bff
+}
+
+.btn-text-filled {
+  color: #E7E6E6
+}
+
+.btn-text-unfilled {
+  color: #324bff
+}
+
+.mcard-btns-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.mcard-first-btns {
+  width: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-title {
+  font-size: 20px;
+  color: #4d4d4d;
+}
+
+.modal-input {
+  width: 100%;
+  background-color: #f7f7f7;
+  margin-top: 15px !important;
+}
+
+.modal-btns-container {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.modal-btns-inner-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 200px;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useItems } from '../../hooks/useItems'
+import { Item } from '../Item'
 
 const ItemList = () => {
 
@@ -8,11 +9,13 @@ const ItemList = () => {
     console.log({ itemList })
 
     return (
-        <div className='it-list-main-container'>
-            <h1>Listas</h1>
-            <h1>Listas</h1>
-            <h1>Listas</h1>
-        </div>
+        <>
+            {
+                itemList.map((item, index) =>
+                    <Item key={item.id} item={item} />
+                )
+            }
+        </>
     )
 }
 
