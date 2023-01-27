@@ -36,6 +36,11 @@ const CreationModal = () => {
         }
     }
 
+    const handleCloseModal = () => {
+        setInputValue('')
+        handleClose()
+    }
+
 
     return (
         <div>
@@ -58,7 +63,7 @@ const CreationModal = () => {
                             <div className='modal-btns-container'>
                                 <div className='modal-btns-inner-container'>
                                     <CustomButton isFilled={true} title={'Add'} handleClick={() => handleCreate()} />
-                                    <CustomButton isFilled={false} title={'Cancel'} handleClick={() => handleClose()} />
+                                    <CustomButton isFilled={false} title={'Cancel'} handleClick={() => handleCloseModal()} />
                                 </div>
                             </div>
                         </div>

@@ -16,12 +16,15 @@ function generateRandomId(length = 10) {
 export const useItems = () => {
 
     //Get params from items context
-    const { itemList, setItemList } = useContext(ItemsContext)
+    const { itemList, setItemList, temporalItemList, setTemporalItemList } = useContext(ItemsContext)
 
-    const handleItemClick = (itemId) => {
-        console.log(itemId)
+    //Updates temporalItemList state -> Items that will be removed when delete btn is pressed
+    const handleItemClick = (item) => {
+        const isAlreadyInList = temporalItemList.includes(item.id)
+        if (!isAlreadyInList) setTemporalItemList([...temporalItemList, item.id])
     }
 
+    //Add item into list
     const onAddItem = (newItem) => {
         const itemData = {
             title: newItem,
@@ -30,8 +33,10 @@ export const useItems = () => {
         setItemList([...itemList, itemData])
     }
 
+    //Delete items taking into account temporalItemList data
     const onDeleteItem = () => {
-
+        const filteredList = itemList.filter((item) => !temporalItemList.includes(item.id))
+        setItemList(filteredList)
     }
 
     return {

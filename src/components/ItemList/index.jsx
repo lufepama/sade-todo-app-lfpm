@@ -6,8 +6,6 @@ const ItemList = () => {
 
     const { itemList } = useItems()
 
-    console.log({ itemList })
-
     return (
         <>
             {

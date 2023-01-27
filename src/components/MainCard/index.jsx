@@ -6,17 +6,19 @@ import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
 import { ModalProvider } from '../../context/ModalContext'
 import { useModal } from '../../hooks/useModal'
 import CreationModal from '../CreationModal/CreationModal';
+import { useItems } from '../../hooks/useItems';
 
 
 const MainCard = () => {
 
   const { handleOpen } = useModal()
+  const { onDeleteItem, itemList } = useItems()
+
 
   return (
     <div className='mcard-main-container'>
       <div className='mcard-inner-container'>
         <CreationModal />
-
         <div className='mcard-header'>
           <h1 className='mcard-title-header'>
             This is technical proof
@@ -28,15 +30,19 @@ const MainCard = () => {
           </p>
         </div>
         <div className='mcard-items-list'>
-          <ItemList />
+          {
+            itemList.length
+              ? <ItemList />
+              : <p className='mcard-empty-text'>Empty list</p>
+          }
+
         </div>
         <div className='mcard-btns-container'>
           <div className='mcard-first-btns'>
             <CustomButton isIcon={true} iconRef={faRotateLeft} />
-            <CustomButton isFilled={false} title={'Delete'} />
+            <CustomButton isFilled={false} title={'Delete'} handleClick={() => onDeleteItem()} />
           </div>
-          <Button onClick={handleOpen}>Open modal</Button>
-          <CustomButton isFilled={true} title={'Add'} />
+          <CustomButton isFilled={true} title={'Add'} handleClick={() => handleOpen()} />
         </div>
       </div>
     </div>

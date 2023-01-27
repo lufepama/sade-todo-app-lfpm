@@ -30,9 +30,13 @@ const initialData = [
 export const ItemsProvider = ({ children }) => {
 
     const [itemList, setItemList] = useState(initialData)
+    const [temporalItemList, setTemporalItemList] = useState([])
 
     return (
-        <Context.Provider value={{ itemList, setItemList }}>
+        <Context.Provider value={{
+            itemList, setItemList,
+            temporalItemList, setTemporalItemList
+        }}>
             {children}
         </Context.Provider>
     )

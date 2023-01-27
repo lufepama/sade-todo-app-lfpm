@@ -47,9 +47,16 @@
   overflow-y: auto;
 }
 
-.item-text {
+
+
+.item-text-selected {
   background-color: #324bff;
   color: rgb(231, 230, 230);
+  padding: 2px;
+}
+
+.item-text-no-selected {
+  color: #4d4d4d;
   padding: 2px;
 }
 
@@ -126,4 +133,9 @@
   display: flex;
   justify-content: space-between;
   width: 200px;
+}
+
+.mcard-empty-text {
+  color: #aeadad;
+  font-size: 14px;
 }
