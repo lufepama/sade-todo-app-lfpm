@@ -20,6 +20,8 @@ export const useItems = () => {
         trackEvents, setTrackEvents
     } = useContext(ItemsContext)
 
+    //Methods definition
+
     //Updates temporalItemList state -> Items that will be removed when delete btn is pressed
     const handleItemClick = (item) => {
         const isAlreadyInList = temporalItemList.includes(item.id)
@@ -59,9 +61,17 @@ export const useItems = () => {
     const deleteSingleItem = (delItem) => {
         const filteredList = itemList.filter((item) => item.id != delItem.id)
         setItemList(filteredList)
+
+        //We need to update the trackdata state.
+        const trackData = {
+            operation: 'Del',
+            data: new Array(delItem)
+        }
+        setTrackEvents(trackData)
     }
 
-    //Manages undo, depending on operation value
+    //Manages undo, depending on operation value. The track events and temporal itemlist 
+    //are reset after conditional execution
     const onUndo = () => {
         if (trackEvents?.operation === 'Del') {
             setItemList((prevData) => prevData.concat([...trackEvents?.data]))
@@ -73,7 +83,6 @@ export const useItems = () => {
             setTrackEvents({})
             setTemporalItemList([])
         }
-
     }
 
     return {

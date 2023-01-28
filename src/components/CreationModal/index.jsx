@@ -24,10 +24,12 @@ const CreationModal = () => {
     const { onAddItem } = useItems()
     const [inputValue, setInputValue] = useState('')
 
+    //Handle input value change
     const handleChange = (event) => {
         setInputValue(event.target.value);
     };
 
+    //Manages the creation of new entry
     const handleCreate = () => {
         if (inputValue.length > 0) {
             onAddItem(inputValue)
@@ -36,6 +38,7 @@ const CreationModal = () => {
         }
     }
 
+    //Manges the close event of the modal
     const handleCloseModal = () => {
         setInputValue('')
         handleClose()

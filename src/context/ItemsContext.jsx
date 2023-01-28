@@ -29,6 +29,7 @@ const initialData = [
 
 export const ItemsProvider = ({ children }) => {
 
+    //States used in the provider
     const [itemList, setItemList] = useState(initialData)
     const [temporalItemList, setTemporalItemList] = useState([])
     const [trackEvents, setTrackEvents] = useState({})

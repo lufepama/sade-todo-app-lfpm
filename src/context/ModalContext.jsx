@@ -4,6 +4,7 @@ const Context = React.createContext({})
 
 export const ModalProvider = ({ children }) => {
 
+    //State used in the provider
     const [open, setOpen] = useState(false)
 
     return (

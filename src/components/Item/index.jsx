@@ -8,11 +8,13 @@ export const Item = ({ item }) => {
     const { handleItemClick, deleteSingleItem, itemList } = useItems()
     const [isSelected, setIsSelected] = useState(false)
 
+    //Manages the single click event
     const handleSingleClick = () => {
         handleItemClick(item)
         setIsSelected(true)
     }
 
+    //Manges the dbclick event. With the help of useSingleAndDoubleClock hook.
     const handleDoubleClick = () => {
         deleteSingleItem(item)
     }

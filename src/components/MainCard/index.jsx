@@ -3,9 +3,8 @@ import ItemList from '../ItemList/index'
 import CustomButton from '../../components/shared/CustomButton'
 import Button from '@mui/material/Button';
 import { faRotateLeft } from '@fortawesome/free-solid-svg-icons'
-import { ModalProvider } from '../../context/ModalContext'
 import { useModal } from '../../hooks/useModal'
-import CreationModal from '../CreationModal/CreationModal';
+import CreationModal from '../CreationModal';
 import { useItems } from '../../hooks/useItems';
 
 
@@ -13,9 +12,6 @@ const MainCard = () => {
 
   const { handleOpen } = useModal()
   const { onDeleteItems, onUndo, itemList } = useItems()
-
-
-  console.log(itemList)
 
   return (
     <div className='mcard-main-container'>
@@ -37,7 +33,6 @@ const MainCard = () => {
               ? <ItemList />
               : <p className='mcard-empty-text'>Empty list</p>
           }
-
         </div>
         <div className='mcard-btns-container'>
           <div className='mcard-first-btns'>

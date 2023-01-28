@@ -7,6 +7,8 @@ export const useModal = () => {
     //Get params from items context
     const { open, setOpen } = useContext(ModalContext)
 
+
+    //Methods definition
     const handleOpen = () => setOpen(true)
     const handleClose = () => setOpen(false)
 
